@@ -309,7 +309,7 @@ const DashboardTable = ({ data, deleteExpenseById, addOrUpdateExpense }) => {
                   onClick={() => handleDelete()}
                   class="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none "
                 >
-                  Yes, I'm sure
+                  Yes, I&apos;m sure
                 </button>
               </div>
               {/* </div> */}
