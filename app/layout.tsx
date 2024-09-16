@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+import ConditionalLayout from "../components/common/ConditionalLayout";
+import Providers from "../components/Providers"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <Providers>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ToastContainer />
+        <ConditionalLayout>{children}</ConditionalLayout>
+      </body>
     </html>
+    </Providers>
   );
 }
