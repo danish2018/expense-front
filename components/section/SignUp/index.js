@@ -23,19 +23,15 @@ const SignUp = () => {
     setLoading(true);
     try {
       const res = await signup("/auth/registration", { ...data });
-        console.log("res",res);
-        
+      console.log("res", res);
+
       if (!res.error) {
         router.push("/login");
         toast.success("Register Success");
         setLoading(false);
-        setUser({
-          username: "",
-          email: "",
-          phone: "",
-          password: "",
-          password2: "",
-        });
+      } else if (res.error) {
+        toast.error(res.message);
+        setLoading(false);
       }
     } catch (error) {
       console.log("error while Signup Userr", error);
@@ -58,8 +54,6 @@ const SignUp = () => {
       // Reset the form or navigate as needed
     }
   };
-
-  
 
   return (
     <>

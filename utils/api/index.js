@@ -16,10 +16,9 @@ const getAllExpense = async (url) => {
 const signup = async (url, data) => {
   try {
     const response = await axiosInstance.post(url, { ...data });
-    return response.data;
+    return response;
   } catch (error) {
-    return response.data
-    console.error("Error:", error);
+    return error?.response?.data
   }
 };
 
